@@ -6,7 +6,7 @@
 	interface Score {
 		score: number;
 		playerName: string;
-		timestamp: string;
+		timestamp: number;
 	}
 
 	let scores: Score[] = [];
@@ -21,13 +21,20 @@
 			});
 	}
 
+	function niceDate(timestamp: number): string {
+		const d = new Date(timestamp);
+
+		const date = d.toLocaleDateString(undefined,{dateStyle:"full",});
+
+		return `${date} ${d.toLocaleTimeString()}`
+	}
 
 	getData();
 </script>
 
 <main class="container">
 	<div class="px-4 py-5 my-5 text-center">
-		<img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+		<img class="d-block mx-auto mb-4" src="pacman.svg" alt="" height="200">
 		<h1 class="display-5 fw-bold">High Score</h1>
 		<div class="col-lg-6 mx-auto">
 		  <p class="lead mb-4">Here are the high scores</p>
@@ -52,7 +59,7 @@
 			<th scope="row">{i+1}</th>
 			<td> {row.playerName} </td>
 			<td> {row.score} </td>
-			<td> {new Date(row.timestamp)} </td>
+			<td> {niceDate(row.timestamp)} </td>
 		  </tr>
 	  {/each}
 
