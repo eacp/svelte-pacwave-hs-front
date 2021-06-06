@@ -39,12 +39,12 @@
 		<div class="col-lg-6 mx-auto">
 		  <p class="lead mb-4">Here are the high scores</p>
 		  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-			<button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" on:click={getData}>Update</button>
+			<button type="button" class="btn btn-outline-primary btn-lg px-4 me-sm-3" on:click={getData}>Update</button>
 		  </div>
 		</div>
 	  </div>
 
-	  <table class="table table-dark table-striped">
+	  <table class="table table-primary table-striped">
 		<thead>
 	  <tr>
 		<th scope="col">#</th>
